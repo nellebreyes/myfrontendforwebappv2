@@ -9,13 +9,11 @@ const Register = (props) => {
     confirmPassword: "",
     photo: "",
     error: "",
-    formData: "",
+    formData: new FormData(),
   });
 
   //destructure to grab easily
   const { password, confirmPassword, formData } = values;
-
-  setValues({ ...values, formData: new FormData() });
 
   //high order function, function returning another function
   const handleChange = (name) => (event) => {
