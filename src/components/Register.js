@@ -35,15 +35,6 @@ const Register = (props) => {
     );
     //console.log(response.data.message);
     if (response.data.message === "success" && response.data.token) {
-      setValues({
-        email: "",
-        password: "",
-        confirmPassword: "",
-        photo: "",
-        error: "",
-        loading: false,
-        formData: "",
-      });
       alert(
         "You have successfully registered, you will be redirected to the login page"
       );
