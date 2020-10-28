@@ -8,8 +8,6 @@ import ContextProvider from "../ContextProvider";
 import Page from "./Page";
 import Footer from "./Footer";
 import Axios from "axios";
-Axios.defaults.baseURL =
-  process.env.REACT_APP_API_URL || "https://auth-webapp2.herokuapp.com/api";
 
 function App() {
   const [status, setStatus] = useState(
