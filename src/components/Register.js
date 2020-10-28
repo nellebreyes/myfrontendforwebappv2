@@ -25,13 +25,13 @@ const Register = (props) => {
 
   const register = async () => {
     const response = await Axios.post(
-      `${Axios.defaults.baseURL}/register`, formData
+      `${Axios.defaults.baseURL}/register`,
+      formData,
       {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       }
-     
     );
     //console.log(response.data.message);
     if (response.data.message === "success" && response.data.token) {
