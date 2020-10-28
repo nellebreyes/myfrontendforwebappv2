@@ -13,11 +13,9 @@ const Register = (props) => {
   });
 
   //destructure to grab easily
-  const { email, password, confirmPassword, photo, formData } = values;
+  const { password, confirmPassword, formData } = values;
 
-  useEffect(() => {
-    setValues({ ...values, formData: new FormData() });
-  }, []);
+  setValues({ ...values, formData: new FormData() });
 
   //high order function, function returning another function
   const handleChange = (name) => (event) => {
@@ -39,7 +37,7 @@ const Register = (props) => {
         }
       );
       //console.log(response.data.message);
-      if (response.data.message == "success" && response.data.token) {
+      if (response.data.message === "success" && response.data.token) {
         setValues({
           email: "",
           password: "",
@@ -93,7 +91,7 @@ const Register = (props) => {
         counter++;
         setError("Email must be in valid format");
         return;
-      } else if (email == "") {
+      } else if (email === "") {
         setError("Email is required");
         setValues({ ...values, [inputName]: e.target.value });
       } else {
@@ -109,7 +107,7 @@ const Register = (props) => {
           "Password must be alphanumeric , min of 8 up to 30 characters."
         );
         return;
-      } else if (password == "") {
+      } else if (password === "") {
         setError("Password is required");
         setValues({ ...values, [inputName]: e.target.value });
       } else {
@@ -124,7 +122,7 @@ const Register = (props) => {
         counter++;
         setError("Confirm password and password must match");
         return;
-      } else if (confirmPassword == "") {
+      } else if (confirmPassword === "") {
         setError("Confirm password is required");
         return;
       } else {
@@ -135,7 +133,7 @@ const Register = (props) => {
 
     if (inputName === "photo") {
       let photo = e.target.value;
-      if (photo == "") {
+      if (photo === "") {
         counter++;
         setError("Photo is required.");
         return;
@@ -201,7 +199,7 @@ const Register = (props) => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
     validateFields();
-    if (counter != 0) {
+    if (counter !== 0) {
       register();
     }
   };

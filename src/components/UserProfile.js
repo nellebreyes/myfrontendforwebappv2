@@ -28,14 +28,17 @@ function UserProfile() {
       }
     }
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div className="profile-section">
       <h2>Profile Page</h2>
       <i className="fas fa-ellipsis-h fa-2x mb-2"></i>
       <div className="profilePhoto">
-        <img src={`data:image/jpeg;base64,${profileData.photo}`} />
+        <img
+          src={`data:image/jpeg;base64,${profileData.photo}`}
+          alt="profile photo"
+        />
       </div>
       <p className="email">{profileData.email}</p>
       <div className="content">
