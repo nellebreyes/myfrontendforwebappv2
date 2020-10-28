@@ -24,39 +24,30 @@ const Register = (props) => {
   };
 
   const register = async () => {
-    try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_API_URL}/register`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+    const response = await Axios.post(
+      `${process.env.REACT_APP_API_URL}/register`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    //console.log(response.data.message);
+    if (response.data.message === "success" && response.data.token) {
+      setValues({
+        email: "",
+        password: "",
+        confirmPassword: "",
+        photo: "",
+        error: "",
+        loading: false,
+        formData: "",
+      });
+      alert(
+        "You have successfully registered, you will be redirected to the login page"
       );
-      //console.log(response.data.message);
-      if (response.data.message === "success" && response.data.token) {
-        setValues({
-          email: "",
-          password: "",
-          confirmPassword: "",
-          photo: "",
-          error: "",
-          loading: false,
-          formData: "",
-        });
-        alert(
-          "You have successfully registered, you will be redirected to the login page"
-        );
-        props.history.push(`/`);
-      }
-    } catch (e) {
-      if (e.response.data.error.length > 0) {
-        //   console.log(e.response.data.error);
-        //alert(e.response.data.error);
-      } else {
-        //    console.log("All fields are required", e.response.data.error);
-      }
+      props.history.push(`/`);
     }
   };
 
@@ -76,8 +67,8 @@ const Register = (props) => {
   };
 
   //test if passwords and confirm password are the same
-  const isSame = (password, confirmpass) => {
-    return confirmpass === password ? true : false;
+  const isSame = (password, confirmpassword) => {
+    return confirmpassword === password ? true : false;
   };
 
   function validateInput(inputName, e) {
