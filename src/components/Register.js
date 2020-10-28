@@ -25,7 +25,7 @@ const Register = (props) => {
 
   const register = async () => {
     const response = await Axios.post(
-      `https://auth-webapp2.herokuapp.com/api/register`,
+      `${Axios.defaults.baseURL}/register`,
       {
         headers: {
           "Content-Type": "multipart/form-data",
