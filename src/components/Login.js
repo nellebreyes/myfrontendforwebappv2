@@ -21,10 +21,10 @@ const Login = (props) => {
   const clickSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_API_URL}/login`,
-        { email, password }
-      );
+      const response = await Axios.post(`${Axios.defaults.baseURL}/login`, {
+        email,
+        password,
+      });
       if (response.data.token) {
         //console.log("login page", response.data);
         localStorage.setItem("webappv2Token", response.data.token);
