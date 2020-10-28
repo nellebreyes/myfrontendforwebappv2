@@ -37,7 +37,7 @@ function UserProfile() {
       <div className="profilePhoto">
         <img
           src={`data:image/jpeg;base64,${profileData.photo}`}
-          alt="profile photo"
+          alt="profile"
         />
       </div>
       <p className="email">{profileData.email}</p>
