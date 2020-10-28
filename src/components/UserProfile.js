@@ -14,7 +14,7 @@ function UserProfile() {
     async function fetchData() {
       try {
         const response = await Axios.post(
-          `${process.env.REACT_APP_API_URL}/profile/${id}`,
+          `${Axios.defaults.baseURL}/profile/${id}`,
           { token: localStorage.getItem("webappv2Token") }
         );
 
