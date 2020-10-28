@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #343a40;
+  color: #fff;
+  font-weight: 500;
+
+  .header-container {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 30% 70%);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .nav {
+      height: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center !important;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        float: right;
+
+        li {
+          list-style: none;
+
+          a {
+            padding: 1.2em;
+            color: #fff;
+
+            &:active {
+              color: #3efaea;
+            }
+            &:hover {
+              color: #0ebdae;
+            }
+          }
+        }
+      }
+    }
+  }
+}
