@@ -7,7 +7,6 @@ import Register from "./Register";
 import ContextProvider from "../ContextProvider";
 import Page from "./Page";
 import Footer from "./Footer";
-import Axios from "axios";
 
 function App() {
   const [status, setStatus] = useState(
