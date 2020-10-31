@@ -18,7 +18,7 @@ function EditUserProfile(props) {
   });
 
   //destructure to grab easily
-  const { error, formData } = values;
+  const { error, photo, formData } = values;
 
   //validate photo input
   let counter;
@@ -74,7 +74,7 @@ function EditUserProfile(props) {
       }
     }
     fetchData();
-  }, [id]);
+  }, [id, photo]);
 
   //end
 
