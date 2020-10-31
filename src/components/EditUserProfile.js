@@ -102,7 +102,6 @@ function EditUserProfile(props) {
             break;
           case "loading":
             continue;
-            break;
           case "error":
             continue;
           case "formData":
