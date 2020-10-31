@@ -50,9 +50,9 @@ function EditUserProfile(props) {
     );
 
     setProfileData({
-      email: response.data.value.email,
       photo: response.data.value.photo.data,
     });
+    setValues({ ...values, photo: profileData.photo });
   };
 
   //high order function, function returning another function
