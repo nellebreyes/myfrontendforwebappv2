@@ -55,29 +55,6 @@ function EditUserProfile(props) {
     });
   };
 
-  //another useEffect
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await Axios.post(
-          `${Axios.defaults.baseURL}/profile/${id}`,
-          { token: localStorage.getItem("webappv2Token") }
-        );
-
-        setProfileData({
-          email: response.data.email,
-          photo: response.data.photo.data,
-        });
-        // console.log(response.data.photo.data);
-      } catch (err) {
-        //console.log("there was a problem");
-      }
-    }
-    fetchData();
-  }, [id, photo]);
-
-  //end
-
   //high order function, function returning another function
   const handleChange = (name) => (event) => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;
@@ -104,7 +81,7 @@ function EditUserProfile(props) {
       }
     }
     fetchData();
-  }, [id]);
+  }, [id, photo]);
 
   const clickSubmit = (event) => {
     event.preventDefault();
