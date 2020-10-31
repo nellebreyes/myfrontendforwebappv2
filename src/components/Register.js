@@ -62,6 +62,7 @@ const Register = (props) => {
     return confirmpassword === password ? true : false;
   };
 
+  //real time input validation
   function validateInput(inputName, e) {
     setValues({ ...values, [inputName]: e.target.value });
 
@@ -123,6 +124,7 @@ const Register = (props) => {
       }
     }
   }
+  //validate before submit
   //the number of cases must equal the number of fieds to validate, see validateInput function
   const validateFields = (e) => {
     for (let key in values) {
