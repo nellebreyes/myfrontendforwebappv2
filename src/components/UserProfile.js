@@ -50,11 +50,6 @@ function UserProfile() {
           <i className="fas fa-edit"></i>
         </NavLink>
         <ReactTooltip id="edit" />
-        {/* {"   "}
-        <NavLink to="#" data-tip="Delete" data-for="delete">
-          <i className="fas fa-trash"></i>
-        </NavLink>
-        <ReactTooltip id="delete" /> */}
       </div>
 
       <div className="content">

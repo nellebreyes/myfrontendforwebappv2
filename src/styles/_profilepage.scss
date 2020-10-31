@@ -9,8 +9,13 @@
     display: inline-block;
     text-align: center;
 
-    i {
-      padding-right: 1rem;
+    .fa-edit:before {
+      font-size: 1.4rem !important;
+    }
+    p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 5px;
     }
   }
 
