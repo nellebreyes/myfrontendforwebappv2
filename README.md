@@ -10,5 +10,5 @@
   <li>Front and Back ends registration validation using Javascript</li>
   <li>Upload Photo</li>
   <li>Edit photo with instant preview</li>
-  <li>Sign in and Sign out pages</>
+  <li>Sign in and Sign out</>
 </ul>
