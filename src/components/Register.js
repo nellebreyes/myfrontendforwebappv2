@@ -33,12 +33,17 @@ const Register = (props) => {
         },
       }
     );
-    //console.log(response.data.message);
+    // console.log(response.data);
     if (response.data.message === "success" && response.data.token) {
       alert(
         "You have successfully registered, you will be redirected to the login page"
       );
       props.history.push(`/`);
+    } else {
+      console.log(response.data);
+      if (response.data == "The email you entered is already on file.") {
+        alert(response.data);
+      }
     }
   };
 
