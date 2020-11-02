@@ -41,7 +41,7 @@ const Register = (props) => {
       props.history.push(`/`);
     } else {
       console.log(response.data);
-      if (response.data == "The email you entered is already on file.") {
+      if (response.data === "The email you entered is already on file.") {
         alert(response.data);
       }
     }
